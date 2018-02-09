@@ -1,0 +1,68 @@
+{
+	"main": [
+		{
+			"state": false,
+			"id": 0,
+			"name": "aa",
+			"type": "F",
+			"tip": "hi"
+		},
+		{
+			"state": false,
+			"id": 0,
+			"name": "b",
+			"type": "M",
+			"tip": "yes"
+		},
+		{
+			"state": false,
+			"id": 0,
+			"name": "cc",
+			"tip": "no"
+		}
+	],
+	"mrpc": [
+		{
+			"uid": 0,
+			"program": "CBM-TOF",
+			"type": "MRPC3b",
+			"phase": "STAR-ETOF",
+			"mid": 1,
+			"crtest": true,
+			"beamtest": false,
+			"status": "production",
+			"location": "Hefei",
+			"owner": "USTC",
+			"date": "2018-01-24",
+			"comment": ""
+		},
+		{
+			"uid": 1,
+			"program": "STAR-TOF",
+			"type": "v1",
+			"phase": "Beamtest",
+			"mid": 3,
+			"crtest": false,
+			"beamtest": false,
+			"status": "test",
+			"location": "Fermi",
+			"owner": "USTC",
+			"date": "2007-01-24",
+			"comment": ""
+		},
+		{
+			"uid": 2,
+			"program": "CBM-TOF",
+			"type": "MRPC3b",
+			"phase": "STAR-ETOF",
+			"mid": 2,
+			"crtest": true,
+			"beamtest": false,
+			"status": "production",
+			"location": "Hefei",
+			"owner": "USTC",
+			"date": "2018-01-26",
+			"comment": ""
+		}
+	]
+}

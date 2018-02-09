@@ -1,0 +1,118 @@
+{
+	"main": [
+		{
+			"field": "state",
+			"checkbox": true,
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle"
+		},
+		{
+			"title": "ID",
+			"field": "id",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true
+		},
+		{
+			"title": "Name",
+			"field": "name",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true,
+			"filterControl": "input"
+		},
+		{
+			"title": "Type",
+			"field": "type",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true,
+			"filterControl": "select"
+		}
+	],
+	"mrpc":[
+		{
+			"title": "UID",
+			"field": "uid",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true
+		},
+		{
+			"title": "Program",
+			"field": "program",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true,
+			"filterControl": "input"
+		},
+		{
+			"title":"Type",
+			"field":"type",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		},
+		{
+			"title":"Phase",
+			"field":"phase",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		},
+		{
+			"title":"ModuleID",
+			"field":"mid",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"input"
+		},
+		{
+			"title":"Status",
+			"field":"status",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		},
+		{
+			"title":"Location",
+			"field":"location",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		},
+		{
+			"title":"Owner",
+			"field":"owner",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		},
+		{
+			"title":"Date",
+			"field":"date",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true
+		}
+	]
+}

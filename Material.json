@@ -1,0 +1,78 @@
+{
+  "glass":{
+    "size":[330, 276, 0.28],
+    "tolerance":[0.4, 0.02],
+    "amount":14,
+    "vendor":"ASAHI Glass Company"
+  },
+  "pcb_m":{
+    "size":[354, 324, 1.2],
+    "tolerance":[0.1, 0.05],
+    "amount":1,
+    "vendor":"Shenzhen Fastprint Circuit Tech. Co., Ltd."
+  },
+  "pcb":{
+    "size":[354, 302, 0.9],
+    "tolerance":[0.1, 0.05],
+    "amount":2,
+    "vendor":"Shenzhen Fastprint Circuit Tech. Co., Ltd."
+  },
+  "kapton":{
+    "size":[338, 284, 0.05],
+    "tolerance":[0.5, 0.01],
+    "amount":4,
+    "vendor":"DuPont"
+  },
+  "graphite":{
+    "size":[326, 272, 0],
+    "tolerance":[0.5, 0],
+    "amount":4,
+    "vendor":"GRAPHIT 33 / CRC"
+  },
+  "honeycomb":{
+    "size":[330, 285, 6],
+    "tolerance":[1, 0.2],
+    "amount":2,
+    "vendor":"Beijing Axicob New Material Co., Ltd."
+  },
+  "fishline":{
+    "size":[0.23, 0, 0],
+    "tolerance":[0.005, 0],
+    "amount":"55m",
+    "vendor":"SuFix"
+  },
+  "adhesive_tape":{
+    "size":[330, 285, 0.13],
+    "tolerance":[0.5, 0],
+    "amount":2,
+    "vendor":"9690 / 3M"
+  },
+  "HV_wire":{
+    "size":[],
+    "tolerance":"15kV",
+    "amount":"3.5m",
+    "vendor":"39x2215 / Dearborn"
+  },
+  "signal_connector":{
+    "amount":16,
+    "vendor":"TSW-109-25-F-D-RA / Samtec"
+  },
+  "pins":{
+    "size":[0.8, 11, 0],
+    "amount":90,
+    "vendor":""
+  },
+  "nylon_screw":{
+    "size":[2.5, 12, 0],
+    "amount":34,
+    "vendor":"HKWASI"
+  },
+  "carbon_tape":{
+    "size":[30, 5, 0.13],
+    "amount":4,
+    "vendor":"ESD EMI Engineering Corp."
+  },
+  "silicone":{
+    "vendor":"CAF4 / BLUESTAR"
+  }
+}

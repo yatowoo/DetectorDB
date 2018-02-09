@@ -1,0 +1,87 @@
+{
+  "main": {
+    "uid": 0,
+    "mid": 3,
+    "program": "CBM-TOF",
+    "type": "MRPC3b",
+    "phase": "STAR-ETOF",
+    "crtest": true,
+    "beamtest": false,
+    "trackinfo": {
+      "status": "production",
+      "location": "Hefei",
+      "owner": "USTC",
+      "date": "2018-01-24"
+    },
+    "comment": "",
+    "prod_id": 5,
+    "test_id": []
+  },
+  "prod": {
+    "operators":["ZJ","WXJ"],
+    "date":"2018-01-24",
+    "owner":"USTC",
+    "thickness":{
+      "pcb2pcb":[],
+      "total":[]
+    },
+    "honeycomb":{
+      "id": 0,
+      "thk": []
+    },
+    "pcb_m":{
+      "id":0,
+      "thk":[]
+    },
+    "pcb_t":{
+      "id":0,
+      "thk":[]
+    },
+    "pcb_b":{
+      "id":0,
+      "thk":[]
+    },
+    "glass":[
+      {"id":0, "thk":[]}
+    ],
+    "fishline":[
+      {"id": 0, "diameter":[]}
+    ],
+    "graphite":[
+      {"id": 0, "resistivity":[]}
+    ]
+  },
+  "test": [{
+    "type":"Cosmic-ray",
+    "gas":{
+      "R134a":0.95,
+      "iC4H10":0.05
+    },
+    "env":{
+      "T":23,
+      "H":30
+    },
+    "electronics":{
+      "FEE":"PADI",
+      "TDC":"USTC-FPGA"
+    },
+    "trackinfo": {
+      "status": "pre-test",
+      "location": "Hefei",
+      "owner": "USTC",
+      "date": "2018-01-24"
+    },
+    "result":"/data/result.root"}
+  ],
+  "type": {
+    "name": "MRPC3b",
+    "stack": "double",
+    "readout": "double",
+    "pitch": "10mm",
+    "strip": "7mm",
+    "width": "320mm",
+    "length": "280mm",
+    "gasgap": "230um",
+    "glass": "float"
+  }
+}
