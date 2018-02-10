@@ -6,7 +6,6 @@ $(document).ready(function () {
         filter: true,
         detailFormatter: function (index, row) { return detailFormatter(index, row); }
     });
-    loadData("tbdata.json");
 });
 
 function detailFormatter(index, row) {

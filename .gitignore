@@ -1,0 +1,5 @@
+# Local script
+*.sh
+
+# Data
+*.root
