@@ -114,5 +114,161 @@
 			"valign":"middle",
 			"sortable":true
 		}
+	],
+	"epd-fee":[
+		{
+			"title": "UID",
+			"field": "uid",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true
+		},
+		{
+			"title": "Serial No.",
+			"field": "sno",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true,
+			"filterControl": "input"
+		},
+		{
+			"title":"Connection",
+			"field":"conn",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		},
+		{
+			"title":"Noise",
+			"field":"noise",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		},
+		{
+			"title":"Signal",
+			"field":"signal",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"input"
+		},
+		{
+			"title":"Comment",
+			"field":"comment",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		}
+	],
+	"epd-rxb":[
+		{
+			"title": "UID",
+			"field": "uid",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true
+		},
+		{
+			"title": "Visual Test",
+			"field": "vis",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true,
+			"filterControl": "select"
+		},
+		{
+			"title":"Noise",
+			"field":"noise",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		},
+		{
+			"title":"Signal",
+			"field":"signal",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"input"
+		},
+		{
+			"title":"Comment",
+			"field":"comment",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		}
+	],
+	"epd-sipm":[
+		{
+			"title": "UID",
+			"field": "uid",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true
+		},
+		{
+			"title":"Visual Test",
+			"field":"vis",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		},
+		{
+			"title":"UI Curve",
+			"field":"ui",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		},
+		{
+			"title":"Noise",
+			"field":"noise",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		},
+		{
+			"title":"Signal",
+			"field":"signal",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"input"
+		},
+		{
+			"title":"Comment",
+			"field":"comment",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle",
+			"sortable":true,
+			"filterControl":"select"
+		}
 	]
 }

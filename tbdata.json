@@ -1,68 +1,104 @@
 {
-	"main": [
-		{
-			"state": false,
-			"id": 0,
-			"name": "aa",
-			"type": "F",
-			"tip": "hi"
-		},
-		{
-			"state": false,
-			"id": 0,
-			"name": "b",
-			"type": "M",
-			"tip": "yes"
-		},
-		{
-			"state": false,
-			"id": 0,
-			"name": "cc",
-			"tip": "no"
-		}
-	],
-	"mrpc": [
-		{
-			"uid": 0,
-			"program": "CBM-TOF",
-			"type": "MRPC3b",
-			"phase": "STAR-ETOF",
-			"mid": 1,
-			"crtest": true,
-			"beamtest": false,
-			"status": "production",
-			"location": "Hefei",
-			"owner": "USTC",
-			"date": "2018-01-24",
-			"comment": ""
-		},
-		{
-			"uid": 1,
-			"program": "STAR-TOF",
-			"type": "v1",
-			"phase": "Beamtest",
-			"mid": 3,
-			"crtest": false,
-			"beamtest": false,
-			"status": "test",
-			"location": "Fermi",
-			"owner": "USTC",
-			"date": "2007-01-24",
-			"comment": ""
-		},
-		{
-			"uid": 2,
-			"program": "CBM-TOF",
-			"type": "MRPC3b",
-			"phase": "STAR-ETOF",
-			"mid": 2,
-			"crtest": true,
-			"beamtest": false,
-			"status": "production",
-			"location": "Hefei",
-			"owner": "USTC",
-			"date": "2018-01-26",
-			"comment": ""
-		}
-	]
+  "main": [{
+      "state": false,
+      "id": 0,
+      "name": "aa",
+      "type": "F",
+      "tip": "hi"
+    },
+    {
+      "state": false,
+      "id": 0,
+      "name": "b",
+      "type": "M",
+      "tip": "yes"
+    },
+    {
+      "state": false,
+      "id": 0,
+      "name": "cc",
+      "tip": "no"
+    }
+  ],
+  "mrpc": [{
+      "uid": 0,
+      "program": "CBM-TOF",
+      "type": "MRPC3b",
+      "phase": "STAR-ETOF",
+      "mid": 1,
+      "crtest": true,
+      "beamtest": false,
+      "status": "production",
+      "location": "Hefei",
+      "owner": "USTC",
+      "date": "2018-01-24",
+      "comment": ""
+    },
+    {
+      "uid": 1,
+      "program": "STAR-TOF",
+      "type": "v1",
+      "phase": "Beamtest",
+      "mid": 3,
+      "crtest": false,
+      "beamtest": false,
+      "status": "test",
+      "location": "Fermi",
+      "owner": "USTC",
+      "date": "2007-01-24",
+      "comment": ""
+    },
+    {
+      "uid": 2,
+      "program": "CBM-TOF",
+      "type": "MRPC3b",
+      "phase": "STAR-ETOF",
+      "mid": 2,
+      "crtest": true,
+      "beamtest": false,
+      "status": "production",
+      "location": "Hefei",
+      "owner": "USTC",
+      "date": "2018-01-26",
+      "comment": ""
+    }
+  ],
+  "epd-fee": [{
+    "uid": 1,
+    "sno": "0x4d00000116e33c70",
+    "conn": true,
+    "noise": true,
+    "signal": true,
+    "comment": "",
+    "result": "epd-fee-01.root",
+    "pedestal": {
+      "dac=-127": [-34.5, -36, -38.4, -37, -35.9, -40.3, -37.2, -34.2, -40, -37.1, -36.4, -36.6, -35.7, -40.1],
+      "dac=0": [19.6, 18.3, 15.7, 17.1, 18.5, 13.9, 17.1, 20.1, 14.4, 17.1, 17.8, 17.6, 19.5, 18.4, 18.4, 14.5],
+      "dac=+127": [73.7, 72.5, 69.8, 71.3, 72.8, 68.1, 71.5, 74.5, 68.8, 71.4, 72.0, 71.9, 73.7, 72.4, 72.7, 68.9]
+    }
+  }],
+  "epd-rxb": [{
+    "uid": 1,
+    "vis": true,
+    "noise": true,
+    "signal": true,
+    "comment": "",
+    "result": "epd-rxb-01.root",
+    "current": [0.503, 0.507]
+  }],
+  "epd-sipm": [{
+    "uid": 1,
+    "vis": true,
+    "ui": true,
+    "noise": true,
+    "signal":true,
+    "comment":"",
+    "result":"epd-fee-01-sipm-01.root",
+    "vis-test":{
+      "L":0.8670,
+      "M":0.8552,
+      "R":0.8789
+    },
+    "ui-point":59.3
+  }]
 }
