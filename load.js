@@ -1,11 +1,17 @@
 $(document).ready(function () {
 
     $("#dTable").bootstrapTable({
-        responseHandle: function (res) { return responseHandler1(res); },
+        responseHandle: function (res) {
+            return responseHandler1(res);
+        },
         columns: tbheader,
         filter: true,
-        detailFormatter: function (index, row) { return detailFormatter(index, row); }
+        detailFormatter: function (index, row) {
+            return detailFormatter(index, row);
+        }
     });
+
+    loadData("query.php");
 });
 
 function detailFormatter(index, row) {
@@ -15,13 +21,13 @@ function detailFormatter(index, row) {
     if (row['beamtest'])
         html.push("<p><a class=\"btn btn-info\" href=\"jsroot/?file=../result.root&layout=grid4x4&load=../drawTest.js\"><b>Beam Test</b> </a></p>");
     return html.join('');
-};
+}
 
 function loadData(query) {
-    $.getJSON(query + "?" + Math.random(), function (data) {
-        $("#dTable").bootstrapTable('append', data['mrpc']);
-    })
-};
+    $.getJSON(query + "?tbname=" + tbname + "&" + Math.random(), function (data) {
+        $("#dTable").bootstrapTable('append', data);
+    });
+}
 
 $(function () {
     $('#dTable').bootstrapTable({
@@ -31,9 +37,9 @@ $(function () {
         onCollapseRow: function (index, row, $detail) {
             $detail.clone().insertAfter($detail).fadeOut('slow', function () {
                 $(this).remove();
-            })
+            });
         }
-    })
+    });
 });
 
 var $table = $('#dTable');
@@ -43,4 +49,4 @@ $(function () {
             exportDataType: $(this).val()
         });
     });
-})
+});

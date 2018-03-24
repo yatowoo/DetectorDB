@@ -26,10 +26,16 @@
     ?>
 
     <script>
-        <?php
-            $data = json_decode(file_get_contents('tbheader.json'), true);
+		<?php
+			// Set table name by $_GET?
+			$tbname = $_GET['tbname'];
+			if(!$tbname){
+				$tbname = 'mrpc';
+			}
+			echo "var tbname = '" . $tbname . "';" ;
+            $tbheader = json_decode(file_get_contents('tbheader.json'), true);
             echo "var tbheader=";
-            echo json_encode($data['mrpc']);
+            echo json_encode($tbheader[$tbname]);
             echo ";\n";
         ?>
     </script>
