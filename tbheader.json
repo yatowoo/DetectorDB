@@ -224,6 +224,20 @@
 			"align": "center",
 			"valign": "middle",
 			"sortable": true
+		},		{
+			"title": "Board No.",
+			"field": "board",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true
+		},		{
+			"title": "Channel",
+			"field": "ch",
+			"rowspan": 1,
+			"align": "center",
+			"valign": "middle",
+			"sortable": true
 		},
 		{
 			"title":"Visual Test",
@@ -237,15 +251,6 @@
 		{
 			"title":"UI Curve",
 			"field":"ui",
-			"rowspan":1,
-			"align":"center",
-			"valign":"middle",
-			"sortable":true,
-			"filterControl":"select"
-		},
-		{
-			"title":"Noise",
-			"field":"noise",
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
