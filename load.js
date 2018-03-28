@@ -16,7 +16,7 @@ $(document).ready(function () {
 
 function buildJsRootBtn(text, file, layout, action) {
     var uri = '/detdb/jsroot?file=' + file + '&layout=' + layout + "&load=" + action;
-    return "<p><a class=\"btn btn-info\" href=\"" + encodeURI(uri) + "\"><b>" + text + "</b> </a></p>";
+    return "<p><a class=\"btn btn-info\" target=\"_blank\" href=\"" + encodeURI(uri) + "\"><b>" + text + "</b> </a></p>";
 }
 
 function buildList(header, data){
