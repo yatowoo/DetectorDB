@@ -15,7 +15,7 @@ $(document).ready(function () {
 });
 
 function buildJsRootBtn(text, file, layout, action) {
-    var uri = '../jsroot?file=' + file + '&layout=' + layout + "&load=" + action;
+    var uri = '/detdb/jsroot?file=' + file + '&layout=' + layout + "&load=" + action;
     return "<p><a class=\"btn btn-info\" href=\"" + encodeURI(uri) + "\"><b>" + text + "</b> </a></p>";
 }
 
@@ -34,14 +34,14 @@ function detailFormatter(index, row) {
         // Button - link to jsroot
         if (row['crtest'])
             html.push(
-                buildJsRootBtn("Cosmic-ray Test", "../result.root", "grid4x4", "../detdb/drawTest.js"));
+                buildJsRootBtn("Cosmic-ray Test", "/detdb/result.root", "grid4x4", "/detdb/drawTest.js"));
         if (row['beamtest'])
             html.push(
-                buildJsRootBtn("Beam Test", "../result.root", "grid4x4", "../detdb/drawTest.js"));
+                buildJsRootBtn("Beam Test", "/detdb/result.root", "grid4x4", "/detdb/drawTest.js"));
     } else if (tbname == 'epd-fee') {
         // Button - link to jsroot
         html.push(
-            buildJsRootBtn("Result", '"../detdb/getFile.php?exp=EPD&type=FEE&uid=' + row['uid'] + '"', "simple", "../detdb/drawTest.js")
+            buildJsRootBtn("Result", '"/detdb/getFile.php?exp=EPD&type=FEE&uid=' + row['uid'] + '"', "simple", "/detdb/drawTest.js")
         );
         // Table - pedestal
         html.push("<table class='table'>");
@@ -66,14 +66,14 @@ function detailFormatter(index, row) {
     else if(tbname == 'epd-rxb'){
         // Button - link to jsroot
         html.push(
-            buildJsRootBtn("Result", '"../detdb/getFile.php?exp=EPD&type=RXB&uid=' + row['uid'] + '"', "simple", "../detdb/drawTest.js")
+            buildJsRootBtn("Result", '"/detdb/getFile.php?exp=EPD&type=RXB&uid=' + row['uid'] + '"', "simple", "/detdb/drawTest.js")
         );
         // List
         html.push(buildList("Current / A", row['current']));    
     }else if(tbname == 'epd-sipm'){
         // Button - link to jsroot
         html.push(
-            buildJsRootBtn("Result", '"../detdb/getFile.php?exp=EPD&type=SiPM&uid=' + row['uid'] + '"', "simple", "../detdb/drawTest.js")
+            buildJsRootBtn("Result", '"/detdb/getFile.php?exp=EPD&type=SiPM&uid=' + row['uid'] + '"', "simple", "/detdb/drawTest.js")
         );
         // List
         html.push(buildList("Height / mm", row['vis-test']));   

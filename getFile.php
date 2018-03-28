@@ -58,7 +58,7 @@ else{
 }
 
 // GET param : exp=EPD&type=FEE&uid=0
-$DATA_DIR="/home/yato/DATA";
+$DATA_DIR="./DATA";
 $file = $DATA_DIR . "/" . $_GET["exp"] . "/" ; 
 if($_GET['exp'] == 'EPD'){
 	$file = $file . $_GET['type'] . 'Summary/';
