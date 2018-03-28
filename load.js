@@ -16,7 +16,7 @@ $(document).ready(function () {
 
 function buildJsRootBtn(text, file, layout, action) {
     var uri = '/detdb/jsroot?file=' + file + '&layout=' + layout + "&load=" + action;
-    return "<p><a class=\"btn btn-info\" target=\"_blank\" href=\"" + encodeURI(uri) + "\"><b>" + text + "</b> </a></p>";
+    return "<a class=\"label label-info\" target=\"_blank\" href=\"" + encodeURI(uri) + "\">" + text + "</a>";
 }
 
 function buildList(header, data){
@@ -47,10 +47,6 @@ function detailFormatter(index, row) {
             html.push(
                 buildJsRootBtn("Beam Test", "/detdb/result.root", "grid4x4", "/detdb/drawTest.js"));
     } else if (tbname == 'epd-fee') {
-        // Button - link to jsroot
-        html.push(
-            buildJsRootBtn("Result", '"/detdb/getFile.php?exp=EPD&type=FEE&uid=' + row['uid'] + '"', "simple", "/detdb/drawTest.js")
-        );
         // Table - pedestal
         html.push("<table class='table'>");
         html.push("<thead><tr><th>Pedestal</th>");
@@ -72,17 +68,9 @@ function detailFormatter(index, row) {
         html.push("</table>");
     }
     else if(tbname == 'epd-rxb'){
-        // Button - link to jsroot
-        html.push(
-            buildJsRootBtn("Result", '"/detdb/getFile.php?exp=EPD&type=RXB&uid=' + row['uid'] + '"', "simple", "/detdb/drawTest.js")
-        );
         // List
         html.push(buildList("Current / A", row['current']));    
     }else if(tbname == 'epd-sipm'){
-        // Button - link to jsroot
-        html.push(
-            buildJsRootBtn("Result", '"/detdb/getFile.php?exp=EPD&type=SiPM&uid=' + row['uid'] + '"', "simple", "/detdb/drawTest.js")
-        );
         // List
         html.push(buildList("Height / mm", row['vis-test']));   
     }
@@ -92,15 +80,32 @@ function detailFormatter(index, row) {
 function loadData(query) {
     $.getJSON(query + "?tbname=" + tbname + "&" + Math.random(), function (data) {
         $.each(data, function(idx,row){
+            // Check if result file (.root) exist
+            var hasResult = true;
+            // Convert boolean value to pass/fail label
             $.each(row, function(key, val){
                 if(typeof val == 'boolean'){
                     if(val){
                         data[idx][key] = getLabelPass();
                     }else{
                         data[idx][key] = getLabelFail();
+                        hasResult = false;
                     }
                 }
             });
+            // Build a button point to result file (.root)
+                // and show with jsroot
+            if(hasResult || row.result){
+                var tbType = '';
+                if(tbname == 'epd-fee'){
+                    tbType = 'FEE';
+                }else if(tbname == 'epd-rxb'){
+                    tbType = 'RXB';
+                }else if(tbname == 'epd-sipm'){
+                    tbType = 'SiPM';
+                }
+                row.result = buildJsRootBtn("SHOW", '\"/detdb/getFile.php?exp=EPD&type=' + tbType + '&uid=' + row['uid'] + '"', "simple", "/detdb/drawTest.js");
+            }
         });
         $("#dTable").bootstrapTable('append', data);
     });
