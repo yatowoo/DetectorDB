@@ -130,8 +130,7 @@
 			"rowspan": 1,
 			"align": "center",
 			"valign": "middle",
-			"sortable": true,
-			"filterControl": "input"
+			"sortable": true
 		},
 		{
 			"title":"Connection",
@@ -139,8 +138,7 @@
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
-			"sortable":true,
-			"filterControl":"select"
+			"sortable":true
 		},
 		{
 			"title":"Noise",
@@ -148,8 +146,7 @@
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
-			"sortable":true,
-			"filterControl":"select"
+			"sortable":true
 		},
 		{
 			"title":"Signal",
@@ -157,8 +154,13 @@
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
-			"sortable":true,
-			"filterControl":"input"
+			"sortable":true
+		},{
+			"title":"Result",
+			"field":"result",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle"
 		},
 		{
 			"title":"Comment",
@@ -166,8 +168,7 @@
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
-			"sortable":true,
-			"filterControl":"select"
+			"sortable":true
 		}
 	],
 	"epd-rxb":[
@@ -185,8 +186,7 @@
 			"rowspan": 1,
 			"align": "center",
 			"valign": "middle",
-			"sortable": true,
-			"filterControl": "select"
+			"sortable": true
 		},
 		{
 			"title":"Noise",
@@ -194,8 +194,7 @@
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
-			"sortable":true,
-			"filterControl":"select"
+			"sortable":true
 		},
 		{
 			"title":"Signal",
@@ -203,8 +202,13 @@
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
-			"sortable":true,
-			"filterControl":"input"
+			"sortable":true
+		},{
+			"title":"Result",
+			"field":"result",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle"
 		},
 		{
 			"title":"Comment",
@@ -212,8 +216,7 @@
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
-			"sortable":true,
-			"filterControl":"select"
+			"sortable":true
 		}
 	],
 	"epd-sipm":[
@@ -245,8 +248,7 @@
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
-			"sortable":true,
-			"filterControl":"select"
+			"sortable":true
 		},
 		{
 			"title":"UI Curve",
@@ -254,8 +256,7 @@
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
-			"sortable":true,
-			"filterControl":"select"
+			"sortable":true
 		},
 		{
 			"title":"Signal",
@@ -263,8 +264,13 @@
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
-			"sortable":true,
-			"filterControl":"input"
+			"sortable":true
+		},{
+			"title":"Result",
+			"field":"result",
+			"rowspan":1,
+			"align":"center",
+			"valign":"middle"
 		},
 		{
 			"title":"Comment",
@@ -272,8 +278,7 @@
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
-			"sortable":true,
-			"filterControl":"select"
+			"sortable":true
 		}
 	]
 }

@@ -28,6 +28,14 @@ function buildList(header, data){
     return html.join('');
 }
 
+function getLabelPass(){
+    return "<span class=\"label label-success\">PASS</span>";
+}
+
+function getLabelFail(){
+    return "<span class=\"label label-danger\">FAIL</span>";
+}
+
 function detailFormatter(index, row) {
     var html = [];
     if (tbname == "mrpc") {
@@ -83,6 +91,17 @@ function detailFormatter(index, row) {
 
 function loadData(query) {
     $.getJSON(query + "?tbname=" + tbname + "&" + Math.random(), function (data) {
+        $.each(data, function(idx,row){
+            $.each(row, function(key, val){
+                if(typeof val == 'boolean'){
+                    if(val){
+                        data[idx][key] = getLabelPass();
+                    }else{
+                        data[idx][key] = getLabelFail();
+                    }
+                }
+            });
+        });
         $("#dTable").bootstrapTable('append', data);
     });
 }
