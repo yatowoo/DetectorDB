@@ -72,7 +72,20 @@ function detailFormatter(index, row) {
         html.push(buildList("Current / A", row['current']));    
     }else if(tbname == 'epd-sipm'){
         // List
-        html.push(buildList("Height / mm", row['vis-test']));   
+        html.push('<div class="col-sm-2 column">');
+        html.push(buildList("Height / mm", row['vis-test']));
+        html.push('</div>');
+        // Image
+        html.push('<div class="col-sm-10 column">');
+        if(row['vis']){
+            var uri = '/detdb/getImage.php?exp=EPD&type=SiPM&uid=' + row['uid'] + '&test=visual';
+            html.push(
+                "<img src='" + uri + "' class=\"img-rounded\" height=\"180px\"></img>"
+            );
+        }else{
+            html.push('<p>No Image.</p>');
+        }
+        html.push('</div>');
     }
     return html.join('');
 }
