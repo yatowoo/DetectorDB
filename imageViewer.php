@@ -21,7 +21,41 @@
         include_once 'footer.html';
 	?>
 	<script>
-		baguetteBox.run('.gallery');
+		<?php
+			include 'utils.php';
+			// GET params : exp=EPD&type=RXB&uid=[1..60]&test=[noise|signal]
+			if(check_param('exp') && check_param('type') && check_param('uid') && check_param('test')){
+				echo 'var exp = "' . $_GET['exp'] . '";';
+				echo 'var type = "' . $_GET['type'] . '";';
+				echo 'var uid = "' . $_GET['uid'] . '";';
+				echo 'var test = "' . $_GET['test'] . '";';
+			}else{
+				echo 'var exp = null;';
+				echo 'var type = null;';
+				echo 'var uid = -1;';
+				echo 'var test = null;';
+			}
+		?>
+		$(document).ready(function(){
+			$('.breadcrumb li')[1].innerHTML = '<a href="#">' + exp+'</a>';
+			$('.breadcrumb li')[2].innerHTML = '<a href="#">' + type+'</a>';
+			$('.breadcrumb li')[3].innerHTML = String(uid);
+			$('#'+test).attr('class','list-group-item active');
+			for(var ch = 0 ; ch < 16 ; ch++){
+				var imgPath = "/detdb/Noise0.png";
+				var aTag = document.createElement("a");
+				aTag.setAttribute('href', imgPath);
+				aTag.setAttribute('data-caption', 'Channel '+ ch);
+				var imgTag = document.createElement("img");
+				imgTag.setAttribute('src',imgPath);
+				imgTag.setAttribute('height','125px');
+				imgTag.setAttribute('title','Channel '+ ch);
+				imgTag.setAttribute('alt','No Image');
+				aTag.appendChild(imgTag);
+				$('.gallery').append(aTag);
+			}
+			baguetteBox.run('.baguetteBoxTwo');
+		});
 	</script>
 </body>
 </html>
