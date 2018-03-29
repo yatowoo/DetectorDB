@@ -84,7 +84,7 @@ function loadData(query) {
             var hasResult = true;
             // Convert boolean value to pass/fail label
             $.each(row, function(key, val){
-                if(typeof val == 'boolean'){
+                if(typeof val == 'boolean' && key != 'result'){
                     if(val){
                         data[idx][key] = getLabelPass();
                     }else{
@@ -95,7 +95,11 @@ function loadData(query) {
             });
             // Build a button point to result file (.root)
                 // and show with jsroot
-            if(hasResult || row.result){
+	    if(row.result != undefined){
+		hasResult = row.result;
+                row.result = null;
+            }
+            if(hasResult){
                 var tbType = '';
                 if(tbname == 'epd-fee'){
                     tbType = 'FEE';
