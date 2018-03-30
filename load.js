@@ -14,9 +14,17 @@ $(document).ready(function () {
     loadData("query.php");
 });
 
+function buildLabel(html, type){
+    return "<span class=\"label label-" + type + "\">" + html +"</span>";
+}
+
+function buildLabelShow(uri){
+    return "<a class=\"label label-info\" target=\"_blank\" href=\"" + encodeURI(uri) + "\">" + "SHOW" + "</a>";
+}
+
 function buildJsRootBtn(text, file, layout, action) {
     var uri = '/detdb/jsroot?file=' + file + '&layout=' + layout + "&load=" + action;
-    return "<a class=\"label label-info\" target=\"_blank\" href=\"" + encodeURI(uri) + "\">" + text + "</a>";
+    return buildLabelShow(uri);
 }
 
 function buildList(header, data){
@@ -26,14 +34,6 @@ function buildList(header, data){
         html.push("<p><b>"+k+"</b>: "+v+"</p>");
     });   
     return html.join('');
-}
-
-function getLabelPass(){
-    return "<span class=\"label label-success\">PASS</span>";
-}
-
-function getLabelFail(){
-    return "<span class=\"label label-danger\">FAIL</span>";
 }
 
 function detailFormatter(index, row) {
@@ -99,29 +99,33 @@ function loadData(query) {
             $.each(row, function(key, val){
                 if(typeof val == 'boolean' && key != 'result'){
                     if(val){
-                        data[idx][key] = getLabelPass();
+                        data[idx][key] = buildLabel("PASS","success");
                     }else{
-                        data[idx][key] = getLabelFail();
+                        data[idx][key] = buildLabel("FAIL","danger");
                         hasResult = false;
                     }
                 }
             });
             // Build a button point to result file (.root)
                 // and show with jsroot
-	    if(row.result != undefined){
-		hasResult = row.result;
+            if (row.result != undefined) {
+                hasResult = row.result;
                 row.result = null;
             }
-            if(hasResult){
+            if (hasResult) {
                 var tbType = '';
-                if(tbname == 'epd-fee'){
-                    tbType = 'FEE';
-                }else if(tbname == 'epd-rxb'){
+                if (tbname == 'epd-rxb') {
                     tbType = 'RXB';
-                }else if(tbname == 'epd-sipm'){
-                    tbType = 'SiPM';
+                    var uri = '/detdb/imageViewer.php?exp=EPD&type=RXB&uid='+row.uid+'&test=Noise';
+                    row.result = buildLabelShow(uri);
+                } else {
+                    if (tbname == 'epd-fee') {
+                        tbType = 'FEE';
+                    } else if (tbname == 'epd-sipm') {
+                        tbType = 'SiPM';
+                    }
+                    row.result = buildJsRootBtn("SHOW", '\"/detdb/getFile.php?exp=EPD&type=' + tbType + '&uid=' + row['uid'] + '"', "simple", "/detdb/drawTest.js");
                 }
-                row.result = buildJsRootBtn("SHOW", '\"/detdb/getFile.php?exp=EPD&type=' + tbType + '&uid=' + row['uid'] + '"', "simple", "/detdb/drawTest.js");
             }
         });
         $("#dTable").bootstrapTable('append', data);
