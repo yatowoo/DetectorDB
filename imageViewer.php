@@ -41,14 +41,21 @@
 			$('.breadcrumb li')[2].innerHTML = '<a href="#">' + type+'</a>';
 			$('.breadcrumb li')[3].innerHTML = String(uid);
 			$('#'+test).attr('class','list-group-item active');
+			$('#Signal').attr('href',
+				window.location.href.replace(test,'Signal'));
+			$('#Noise').attr('href',
+				window.location.href.replace(test,'Noise'));
 			for(var ch = 0 ; ch < 16 ; ch++){
-				var imgPath = "/detdb/Noise0.png";
+				//var imgPath = "/detdb/getImage.php?exp=" + exp + "&type=" + type + "&uid=" + uid + "&test=" + test + "&channel=" + ch;
+				var imgPath = "/detdb/DATA/" + exp + '/' + type + 'Summary/' + type + uid + '/' + test + ch + '.png';
+				var zoomHref = test + ch + ".png";
 				var aTag = document.createElement("a");
 				aTag.setAttribute('href', imgPath);
 				aTag.setAttribute('data-caption', 'Channel '+ ch);
 				var imgTag = document.createElement("img");
 				imgTag.setAttribute('src',imgPath);
-				imgTag.setAttribute('height','125px');
+				var imgW = $('.gallery')[0].clientWidth / 4;
+				imgTag.setAttribute('width',imgW + 'px');
 				imgTag.setAttribute('title','Channel '+ ch);
 				imgTag.setAttribute('alt','No Image');
 				aTag.appendChild(imgTag);

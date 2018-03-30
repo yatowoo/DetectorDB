@@ -78,7 +78,7 @@ function detailFormatter(index, row) {
         // Image
         html.push('<div class="col-sm-10 column">');
         if(row['vis']){
-            var uri = '/detdb/getImage.php?exp=EPD&type=SiPM&uid=' + row['uid'] + '&test=visual';
+            var uri = '/detdb/getImage.php?exp=EPD&type=SiPM&uid=' + row['uid'] + '&test=Visual';
             html.push(
                 "<img src='" + uri + "' class=\"img-rounded\" height=\"180px\"></img>"
             );
