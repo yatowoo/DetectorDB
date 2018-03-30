@@ -30,14 +30,15 @@
 			// Set table name by $_GET?
 			$tbname = $_GET['tbname'];
 			if(!$tbname){
-				$tbname = 'mrpc';
+				$tbname = 'epd-fee';
 			}
 			echo "var tbname = '" . $tbname . "';" ;
             $tbheader = json_decode(file_get_contents('tbheader.json'), true);
             echo "var tbheader=";
             echo json_encode($tbheader[$tbname]);
             echo ";\n";
-        ?>
+		?>
+		$('#'+tbname).attr('class','list-group-item active');
     </script>
     <script src="load.js"></script>
 </body>
