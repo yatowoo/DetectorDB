@@ -30,7 +30,7 @@ if($_GET['exp'] == 'EPD'){
     }
     $file = $file . 'SiPM-Visual/';
 		$uid = $_GET['uid'];
-		$file = $file . (int)($uid/16) . '#B/'. ($uid%16) . '.bmp';
+		$file = $file . (int)($uid/16) . '#B/'. ($uid%16) . '.jpg';
 	}else if($_GET['type'] == 'RXB' && check_param('channel')){
 		$file = $file . 'RXBSummary/RXB' . $_GET['uid'] . '/' . $_GET['test'] . $_GET['channel'] . '.png';
 	}else{
@@ -42,6 +42,7 @@ if($_GET['exp'] == 'EPD'){
 	exit;
 }
 
-download($file, 'image/' . pathinfo($file)['extension']);
+$info = pathinfo($file);
+download($file, 'image/' . $info['extension']);
 
 ?>
