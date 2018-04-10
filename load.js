@@ -23,7 +23,9 @@ function buildLabelShow(uri){
 }
 
 function buildJsRootBtn(text, file, layout, action) {
-    var uri = '/detdb/jsroot?file=' + file + '&layout=' + layout + "&load=" + action;
+    var uri = '/detdb/jsroot?file=' + file + '&layout=' + layout;
+    if(layout != 'simple')
+        uri += "&load=" + action;
     return buildLabelShow(uri);
 }
 

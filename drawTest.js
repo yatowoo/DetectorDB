@@ -4,7 +4,7 @@ function drawItems() {
     var evt = document.createEvent("MouseEvents");
     evt.initMouseEvent("click", true, true, window,
         0, 0, 0, 0, 0, false, false, false, false, 0, null);
-    for (var i = 1; i < 17; i++) {
+    for (var i = 1; i < items.length -1 ; i++) {
         items[i].dispatchEvent(evt);
     }
 }
