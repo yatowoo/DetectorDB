@@ -27,9 +27,11 @@
 
     <script>
 		<?php
+			// Redirection for QR code interface
 			include_once 'utils.php';
 			if(check_param('tbname') && check_param('uid')){
-				header("location : md.php?tbname=" . $_GET['tbname'] . "&uid=" . $_GET['uid']);
+				$url = "md.php?tbname=" . $_GET['tbname'] . "&uid=" . $_GET['uid'];
+				echo "window.location.href='$url';";
 			};
 			// Set table name by $_GET?
 			$tbname = $_GET['tbname'];
