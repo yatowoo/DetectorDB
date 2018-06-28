@@ -7,6 +7,16 @@
   $dbname = $_GET["tbname"];
   $uid=$_GET["uid"];
 
+  // Old API for EPD .json data (deprecated)
+  if($dbname != "mrpc"){
+    $DATA_DIR = './DATA/';
+    $file = $DATA_DIR . $_GET['tbname'] . '.json';
+    $data = json_decode(file_get_contents($file), true);
+    echo json_encode($data);
+    return;
+  }
+
+  // Link to MySQL database server
   $servername = "localhost";
   $username = "root";
   $password = "";
