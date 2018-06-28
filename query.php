@@ -4,8 +4,13 @@
 
   // Add param. : q=detail, index
   // Check param : tbname, uid
-  $dbname = $_GET["tbname"];
-  $uid=$_GET["uid"];
+  include_once 'utils.php';
+  if(check_param('tbname') && check_param('uid')){
+    $dbname = $_GET["tbname"];
+    $uid=intval($_GET["uid"]);
+  }else{
+    return;
+  }
 
   // Old API for EPD .json data (deprecated)
   if($dbname != "mrpc"){
@@ -18,8 +23,8 @@
 
   // Link to MySQL database server
   $servername = "localhost";
-  $username = "root";
-  $password = "";
+  $username = "webview";
+  $password = '9u3$T';
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
