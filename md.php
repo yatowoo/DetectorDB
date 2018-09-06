@@ -50,7 +50,8 @@
 				tbmain.getElementsByTagName("td")[7].innerText = data.main.mid;
 				tbmain.getElementsByTagName("td")[9].innerText = data.main.qa;
 				tbmain.getElementsByTagName("td")[11].innerText = data.main.test;
-				if(data.track != undefined){
+				
+if(data.track != undefined){
 				tbmain.getElementsByTagName("td")[15].innerText = data.track[data.track.length-1].status;
 				tbmain.getElementsByTagName("td")[17].innerText = data.track[data.track.length-1].location;
 				tbmain.getElementsByTagName("td")[19].innerText = data.track[data.track.length-1].owner;
@@ -88,6 +89,13 @@ if(data.setup.env != undefined){
 					// Result
 				tbresult = $(".markdown-body table")[2].getElementsByTagName("td");
 if(data.test != undefined){
+				tbsetup[21].innerText = data.setup.gas["R134a"];
+				tbsetup[23].innerText = data.setup.gas["iso-C4H10"];
+				tbsetup[25].innerText = data.setup.gas["SF6"];
+				tbsetup[29].innerText = data.setup.env.T;
+				tbsetup[31].innerText = data.setup.env.RH;
+					// Result
+				tbresult = $(".markdown-body table")[2].getElementsByTagName("td");
 				tbresult[6].innerText = data.test.noiserate;
 				tbresult[7].innerText = data.test.efficiency;
 				tbresult[8].innerText = data.test.resolution;
