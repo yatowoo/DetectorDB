@@ -1,10 +1,21 @@
 <?php
 
-  // TODO: Integrate with EPD database
-
   // Add param. : q=detail, index
   // Check param : tbname, uid
   include_once 'utils.php';
+  if(check_param('tbname')){
+    $dbname = $_GET["tbname"];
+    // Old API for EPD .json data (deprecated)
+    if($dbname != "mrpc"){
+      $DATA_DIR = './DATA/';
+      $file = $DATA_DIR . $_GET['tbname'] . '.json';
+      $data = json_decode(file_get_contents($file), true);
+      echo json_encode($data);
+      return;
+    }
+  }
+
+
   if(check_param('tbname') && check_param('uid')){
     $dbname = $_GET["tbname"];
     $uid=intval($_GET["uid"]);
@@ -12,14 +23,6 @@
     return;
   }
 
-  // Old API for EPD .json data (deprecated)
-  if($dbname != "mrpc"){
-    $DATA_DIR = './DATA/';
-    $file = $DATA_DIR . $_GET['tbname'] . '.json';
-    $data = json_decode(file_get_contents($file), true);
-    echo json_encode($data);
-    return;
-  }
 
   // Link to MySQL database server
   $servername = "localhost";
