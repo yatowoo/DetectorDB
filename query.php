@@ -4,7 +4,7 @@
   // Check param : tbname, uid
   include_once 'utils.php';
   if(check_param('tbname')){
-    $dbname = $_GET["tbname"];
+    $dbname = strtolower($_GET["tbname"]);
     // Old API for EPD .json data (deprecated)
     if($dbname != "mrpc"){
       $DATA_DIR = './DATA/';
