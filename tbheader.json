@@ -1,39 +1,4 @@
 {
-	"main": [
-		{
-			"field": "state",
-			"checkbox": true,
-			"rowspan": 1,
-			"align": "center",
-			"valign": "middle"
-		},
-		{
-			"title": "ID",
-			"field": "id",
-			"rowspan": 1,
-			"align": "center",
-			"valign": "middle",
-			"sortable": true
-		},
-		{
-			"title": "Name",
-			"field": "name",
-			"rowspan": 1,
-			"align": "center",
-			"valign": "middle",
-			"sortable": true,
-			"filterControl": "input"
-		},
-		{
-			"title": "Type",
-			"field": "type",
-			"rowspan": 1,
-			"align": "center",
-			"valign": "middle",
-			"sortable": true,
-			"filterControl": "select"
-		}
-	],
 	"mrpc":[
 		{
 			"title": "UID",
@@ -45,7 +10,7 @@
 		},
 		{
 			"title": "Program",
-			"field": "program",
+			"field": "exp",
 			"rowspan": 1,
 			"align": "center",
 			"valign": "middle",
@@ -62,8 +27,8 @@
 			"filterControl":"select"
 		},
 		{
-			"title":"Phase",
-			"field":"phase",
+			"title":"Stage",
+			"field":"stage",
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
@@ -71,7 +36,7 @@
 			"filterControl":"select"
 		},
 		{
-			"title":"ModuleID",
+			"title":"Module ID",
 			"field":"mid",
 			"rowspan":1,
 			"align":"center",
@@ -80,8 +45,8 @@
 			"filterControl":"input"
 		},
 		{
-			"title":"Status",
-			"field":"status",
+			"title":"QA",
+			"field":"qa",
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
@@ -89,30 +54,13 @@
 			"filterControl":"select"
 		},
 		{
-			"title":"Location",
-			"field":"location",
+			"title":"Test",
+			"field":"test",
 			"rowspan":1,
 			"align":"center",
 			"valign":"middle",
 			"sortable":true,
 			"filterControl":"select"
-		},
-		{
-			"title":"Owner",
-			"field":"owner",
-			"rowspan":1,
-			"align":"center",
-			"valign":"middle",
-			"sortable":true,
-			"filterControl":"select"
-		},
-		{
-			"title":"Date",
-			"field":"date",
-			"rowspan":1,
-			"align":"center",
-			"valign":"middle",
-			"sortable":true
 		}
 	],
 	"epd-fee":[
