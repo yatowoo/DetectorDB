@@ -34,9 +34,11 @@
 				echo "window.location.href='$url';";
 			};
 			// Set table name by $_GET?
-			$tbname = $_GET['tbname'];
-			if(!$tbname){
-				$tbname = 'epd-fee';
+			if(check_param('tbname')){
+				$tbname = $_GET['tbname'];
+			}
+			else{
+				$tbname = 'mrpc';
 			}
 			echo "var tbname = '" . $tbname . "';" ;
             $tbheader = json_decode(file_get_contents('tbheader.json'), true);
