@@ -41,13 +41,7 @@ function buildList(header, data){
 function detailFormatter(index, row) {
     var html = [];
     if (tbname == "mrpc") {
-        // Button - link to jsroot
-        if (row['crtest'])
-            html.push(
-                buildJsRootBtn("Cosmic-ray Test", "/detdb/result.root", "grid4x4", "/detdb/drawTest.js"));
-        if (row['beamtest'])
-            html.push(
-                buildJsRootBtn("Beam Test", "/detdb/result.root", "grid4x4", "/detdb/drawTest.js"));
+        html.push(buildLabelShow('?tbname=mrpc&uid='+row.uid));
     } else if (tbname == 'epd-fee') {
         // Table - pedestal
         html.push("<table class='table'>");
