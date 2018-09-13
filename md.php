@@ -96,7 +96,7 @@
 					tbresult[8].innerText = data.test.resolution;
 					tbresult[9].innerText = data.test.current;
 					// TODO : design API for PATH to binary object 
-					$("#current-chart")[0].src = "DATA/mrpc/test/current/"+data.main.uid+".png";
+					$("#current-chart")[0].src = "DATA/mrpc/test/current/uid"+data.main.uid+".png";
 				}
 			});
 		});
