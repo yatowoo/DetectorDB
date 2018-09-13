@@ -54,8 +54,10 @@
           $sql_opt = "SELECT * FROM setup WHERE id=" . $result[$tb]["sid"];
           $setup = $conn->query($sql_opt);
           $result["setup"]=$setup->fetch_assoc();
-          $result["setup"]["gas"] = json_decode($result["setup"]["gas"]);
-          $result["setup"]["env"] = json_decode($result["setup"]["env"]);
+          if(isset($result["setup"]["gas"]))
+            $result["setup"]["gas"] = json_decode($result["setup"]["gas"]);
+          if(isset($result["setup"]["env"]))
+            $result["setup"]["env"] = json_decode($result["setup"]["env"]);
         }
       }
     }

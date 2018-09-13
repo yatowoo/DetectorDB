@@ -59,8 +59,11 @@
 					tbmain.getElementsByTagName("td")[23].innerText = data.track[data.track.length-1].comment;
 				}
 				// Production QA
-				if(data.qa != undefined)
+				if(data.qa != undefined){
 					$("#qa-chart")[0].src = data.qa.chart;
+				}else{
+					$("#qa-chart")[0].src = "DATA/mrpc/qa/" + data.main.uid + ".png";
+				}
 
 				// Test
 					// Setup
@@ -93,7 +96,7 @@
 					tbresult[8].innerText = data.test.resolution;
 					tbresult[9].innerText = data.test.current;
 					// TODO : design API for PATH to binary object 
-					$("#jsroot-result")[0].href = data.test.rootfile;
+					$("#current-chart")[0].src = "DATA/mrpc/test/current/"+data.main.uid+".png";
 				}
 			});
 		});
