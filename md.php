@@ -11,8 +11,6 @@
 	<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
 	<script src="https://cdn.bootcss.com/flat-ui/2.3.0/js/flat-ui.min.js"></script>
 	<script src="https://cdn.bootcss.com/flat-ui/2.3.0/js/vendor/respond.min.js"></script>
-	<link href="https://cdn.bootcss.com/baguettebox.js/1.10.0/baguetteBox.min.css" rel="stylesheet">
-	<script src="https://cdn.bootcss.com/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
 	<link rel="stylesheet" href="github-md.css">
 </head>
 <body>
@@ -97,6 +95,7 @@
 					tbresult[9].innerText = data.test.current;
 					// TODO : design API for PATH to binary object 
 					$("#current-chart")[0].src = "DATA/mrpc/test/current/uid"+data.main.uid+".png";
+					$("#noise-chart")[0].src = "DATA/mrpc/test/noise/"+data.main.uid+".png";
 				}
 			});
 		});
