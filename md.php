@@ -21,7 +21,7 @@
 	?>
 
 	<script>
-		// Rendering markdown-bocy
+		// Rendering markdown-body
 		$(document).ready(function(){
 			// Options from windows.location.href - Util Function
 			urlparams = window.location.href.split("?")[1];
@@ -57,11 +57,10 @@
 					tbmain.getElementsByTagName("td")[23].innerText = data.track[data.track.length-1].comment;
 				}
 				// Production QA
-				if(data.qa != undefined){
+				if(data.qa != undefined && data.qa.chart != undefined && data.qa.chart != "")
 					$("#qa-chart")[0].src = data.qa.chart;
-				}else{
+				else
 					$("#qa-chart")[0].src = "DATA/mrpc/qa/uid" + data.main.uid + ".png";
-				}
 
 				// Test
 					// Setup
@@ -74,28 +73,34 @@
 					tbsetup[9].innerText = data.setup.trigger;
 					tbsetup[11].innerText = data.setup.fee;
 					tbsetup[13].innerText = data.setup.daq;
-					tbsetup[15].innerText = data.setup.geometry;
-					tbsetup[17].innerText = data.setup.acceptance;
 					if(data.setup.gas != undefined && data.setup.gas != null){
-						tbsetup[21].innerText = data.setup.gas["R134a"];
-						tbsetup[23].innerText = data.setup.gas["iso-C4H10"];
-						tbsetup[25].innerText = data.setup.gas["SF6"];
+						tbsetup[17].innerText = data.setup.gas["R134a"];
+						tbsetup[19].innerText = data.setup.gas["iso-C4H10"];
+						tbsetup[21].innerText = data.setup.gas["SF6"];
 					}
 					if(data.setup.env != undefined && data.setup.env != null){
-						tbsetup[29].innerText = data.setup.env.T;
-						tbsetup[31].innerText = data.setup.env.RH;
+						tbsetup[25].innerText = data.setup.env.T;
+						tbsetup[27].innerText = data.setup.env.RH;
 					}
 				}
 					// Result
 				tbresult = $(".markdown-body table")[2].getElementsByTagName("td");
 				if(data.test != undefined){
-					tbresult[6].innerText = data.test.noiserate;
-					tbresult[7].innerText = data.test.efficiency;
-					tbresult[8].innerText = data.test.resolution;
-					tbresult[9].innerText = data.test.current;
-					// TODO : design API for PATH to binary object 
-					$("#current-chart")[0].src = "DATA/mrpc/test/current/uid"+data.main.uid+".png";
-					$("#noise-chart")[0].src = "DATA/mrpc/test/noise/uid"+data.main.uid+".png";
+					tbresult[7].innerText = (data.test.noiserate * 1).toFixed(2);
+					tbresult[8].innerText = (data.test.acceptance * 100).toFixed(1);
+					tbresult[9].innerText = (data.test.efficiency * 100).toFixed(1);
+					tbresult[10].innerText = (data.test.resolution * 1).toFixed(1);
+					tbresult[11].innerText = (data.test.current * 1).toFixed(0);
+					// TODO : design API for PATH to binary object
+					if(data.test.currentfile != undefined && data.test.currentfile != "")
+						$("#current-chart")[0].src = data.test.currentfile;
+					else
+						$("#current-chart")[0].src = "DATA/mrpc/test/current/uid"+data.main.uid+".png";
+
+					if(data.test.noisefile != undefined && data.test.noisefile != "")
+						$("#noise-chart")[0].src = data.test.noisefile;
+					else
+						$("#noise-chart")[0].src = "DATA/mrpc/test/noise/uid"+data.main.uid+".png";
 				}
 			});
 		});

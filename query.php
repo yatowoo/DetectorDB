@@ -39,6 +39,8 @@
     for($i=0;$i<count($tables);$i++){
       $tb=$tables[$i];
       $sql = "SELECT * FROM " . $tb . " WHERE uid=" . $uid;
+      if($tb=='test')
+        $sql = "SELECT * FROM " . $tb . " WHERE uid=" . $uid . " AND webview=1;";
       $query = $conn->query($sql);
       if ($query->num_rows > 0){
         // For table 'track', it maybe multiple entries
