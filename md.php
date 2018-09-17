@@ -60,7 +60,7 @@
 				if(data.qa != undefined){
 					$("#qa-chart")[0].src = data.qa.chart;
 				}else{
-					$("#qa-chart")[0].src = "DATA/mrpc/qa/" + data.main.uid + ".png";
+					$("#qa-chart")[0].src = "DATA/mrpc/qa/uid" + data.main.uid + ".png";
 				}
 
 				// Test
@@ -95,7 +95,7 @@
 					tbresult[9].innerText = data.test.current;
 					// TODO : design API for PATH to binary object 
 					$("#current-chart")[0].src = "DATA/mrpc/test/current/uid"+data.main.uid+".png";
-					$("#noise-chart")[0].src = "DATA/mrpc/test/noise/"+data.main.uid+".png";
+					$("#noise-chart")[0].src = "DATA/mrpc/test/noise/uid"+data.main.uid+".png";
 				}
 			});
 		});
