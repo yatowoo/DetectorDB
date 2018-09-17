@@ -21,6 +21,20 @@
 	?>
 
 	<script>
+		// Convert boolean value to PASS/NONE label
+		function buildLabelBoolean(elem, isPassed){
+			elem.innerText = "";
+			var node = document.createElement("span");
+			if(!!+isPassed){
+				node.setAttribute("class","label label-success");
+				node.innerText = "PASS";
+			}
+			else{
+				node.setAttribute("class","label label-info");
+				node.innerText = "NONE"
+			}
+			elem.appendChild(node);
+		}
 		// Rendering markdown-body
 		$(document).ready(function(){
 			// Options from windows.location.href - Util Function
@@ -46,8 +60,8 @@
 				tbmain.getElementsByTagName("td")[3].innerText = data.main.type;
 				tbmain.getElementsByTagName("td")[5].innerText = data.main.stage;
 				tbmain.getElementsByTagName("td")[7].innerText = data.main.mid;
-				tbmain.getElementsByTagName("td")[9].innerText = data.main.qa;
-				tbmain.getElementsByTagName("td")[11].innerText = data.main.test;
+				buildLabelBoolean(tbmain.getElementsByTagName("td")[9],data.main.qa);
+				buildLabelBoolean(tbmain.getElementsByTagName("td")[11], data.main.test);
 				
 				if(data.track != undefined){
 					tbmain.getElementsByTagName("td")[15].innerText = data.track[data.track.length-1].status;

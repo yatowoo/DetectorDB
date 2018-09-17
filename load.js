@@ -89,6 +89,15 @@ function detailFormatter(index, row) {
 function loadData(query) {
     $.getJSON(query + "?tbname=" + tbname + "&" + Math.random(), function (data) {
         $.each(data, function(idx,row){
+        // MRPC
+        if(tbname.toLowerCase() == "mrpc"){
+            if(!!+row.qa) data[idx]['qa'] = buildLabel("PASS","success");
+            else data[idx]['qa'] = buildLabel("NONE","info");
+            if(!!+row.test) data[idx]['test'] = buildLabel("PASS","success");
+            else data[idx]['test'] = buildLabel("NONE","info");
+        }
+        // EPD
+        else{
             // Check if result file (.root) exist
             var hasResult = true;
             // Convert boolean value to pass/fail label
@@ -123,6 +132,7 @@ function loadData(query) {
                     row.result = buildJsRootBtn("SHOW", '\"/detdb/getFile.php?exp=EPD&type=' + tbType + '&uid=' + row['uid'] + '"', "simple", "/detdb/drawTest.js");
                 }
             }
+        }// for EPD
         });
         $("#dTable").bootstrapTable('append', data);
     });
