@@ -5,14 +5,15 @@
 	<title>Detector Database</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet">
-	<script src="https://cdn.bootcss.com/flat-ui/2.3.0/js/vendor/jquery.min.js"></script>
-	<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
-	<script src="https://cdn.bootcss.com/flat-ui/2.3.0/js/flat-ui.min.js"></script>
-	<script src="https://cdn.bootcss.com/flat-ui/2.3.0/js/vendor/respond.min.js"></script>
-	<link href="https://cdn.bootcss.com/baguettebox.js/1.10.0/baguetteBox.min.css" rel="stylesheet">
-	<script src="https://cdn.bootcss.com/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+	<link rel="icon" href="static/resource/ustc.ico">
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<link href="static/css/flat-ui.min.css" rel="stylesheet">
+	<script src="static/js/jquery.min.js"></script>
+	<script src="static/js/popper.min.js"></script>
+	<script src="static/js/flat-ui.min.js"></script>
+	<script src="static/js/respond.min.js"></script>
+	<link href="static/css/baguetteBox.min.css" rel="stylesheet">
+	<script src="static/js/baguetteBox.min.js"></script>
 </head>
 <body>
     <?php 

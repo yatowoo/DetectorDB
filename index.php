@@ -5,18 +5,19 @@
 	<title>Detector Database</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet">
-	<link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.css" rel="stylesheet">
-	<script src="https://cdn.bootcss.com/flat-ui/2.3.0/js/vendor/jquery.min.js"></script>
-	<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
-	<script src="https://cdn.bootcss.com/flat-ui/2.3.0/js/flat-ui.min.js"></script>
-	<script src="https://cdn.bootcss.com/flat-ui/2.3.0/js/vendor/respond.min.js"></script>
-	<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
-	<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
-	<script src="//static.kcwiki.org/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
-	<script src="//static.kcwiki.org/poi-static/tableExport.min.js"></script>
-	<script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.min.js"></script>
+	<link rel="icon" href="static/resource/ustc.ico">
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<link href="static/css/flat-ui.min.css" rel="stylesheet">
+	<link href="static/css/bootstrap-table.css" rel="stylesheet">
+	<script src="static/js/jquery.min.js"></script>
+	<script src="static/js/popper.min.js"></script>
+	<script src="static/js/flat-ui.min.js"></script>
+	<script src="static/js/respond.min.js"></script>
+	<script src="static/js/bootstrap-table.min.js"></script>
+	<script src="static/js/bootstrap-table-filter-control.min.js"></script>
+	<script src="static/js/FileSaver.min.js"></script>
+	<script src="static/js/tableExport.min.js"></script>
+	<script src="static/js/bootstrap-table-export.min.js"></script>
 </head>
 <body>
     <?php 
